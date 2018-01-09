@@ -3,12 +3,17 @@ node_js:
   - stable
 services:
   - docker
+before_script:
+  - docker-compose up --build -d
 install:
   - npm install
 script:
   - npm run test
 env:
   global:
-    - NEO4J_CONNECTION_URL=bolt://localhost:7687
+    - NEO4J_BOLT_CONNECTION_URL=bolt://localhost:7687
+    - NEO4J_HTTP_CONNECTION_URL=http://localhost:7474
+    - NEO4J_TEST_BOLT_CONNECTION_URL=bolt://localhost:7688
+    - NEO4J_TEST_HTTP_CONNECTION_URL=http://localhost:7475
     - NEO4J_USERNAME=neo4j
     - NEO4J_PASSWORD=password
