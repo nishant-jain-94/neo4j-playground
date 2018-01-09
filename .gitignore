@@ -1,0 +1,11 @@
+# Node Modules
+node_modules/
+
+# Database Volumes
+db/
+
+# Logs
+logs/
+
+# Environmental Variables
+.env

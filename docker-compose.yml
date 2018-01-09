@@ -1,0 +1,24 @@
+version: '3'
+services:
+  graphdb:
+    image: neo4j:3.3.1
+    environment:
+      - NEO4J_AUTH=neo4j/password
+    volumes:
+      - ./db/dbms:/data/dbms
+      - ./logs/graphdb:/logs
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    restart: always
+  graphdb_test:
+    image: neo4j:3.3.1
+    environment:
+      - NEO4J_AUTH=neo4j/password
+    volumes:
+      - ./db/dbms:/data/dbms
+      - ./logs/graphdb:/logs
+    ports:
+      - "7475:7474"
+      - "7688:7687"
+    restart: always
