@@ -12,6 +12,7 @@ const driver = neo4j.driver(
 const session = driver.session();
 
 describe('User controller', () => {
+  console.log(config.neo4j_test_bolt_connection_url);
   before(async () => {
     await loadSeedData(session);
     UserController = proxyquire('./user.controller', {
