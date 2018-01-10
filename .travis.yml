@@ -4,7 +4,7 @@ node_js:
 services:
   - docker
 before_script:
-  - apt-get install -y realpath
+  - sudo apt-get install -y realpath
   - docker-compose up --build -d
 install:
   - npm install
