@@ -10,6 +10,8 @@ install:
   - npm install
 script:
   - npm run test
+after_test:
+  - docker-compose logs graphdb_test
 env:
   global:
     - NEO4J_BOLT_CONNECTION_URL=bolt://localhost:7687
