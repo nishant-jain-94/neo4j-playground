@@ -10,7 +10,7 @@ install:
   - npm install
 script:
   - npm run test
-after_test:
+after_script:
   - docker-compose logs graphdb_test
 env:
   global:
