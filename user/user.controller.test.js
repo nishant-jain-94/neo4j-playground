@@ -54,6 +54,7 @@ describe('User controller', () => {
   });
 
   after(async () => {
+    console.log("Afer Block");
     await session.close();
     await driver.close();
   });
