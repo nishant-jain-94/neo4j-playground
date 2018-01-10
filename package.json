@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prestart": "./wait-for-it.sh localhost:7687 --timeout=0 -- echo 'Neo4j Dev DB is up' && ./wait-for-it.sh localhost:7688 --timeout=0 -- echo 'Neo4j Test DB is up'",
+    "prestart": "./wait-for-it.sh localhost:7687 --timeout=5 --strict -- echo 'Neo4j Dev DB is up' && ./wait-for-it.sh localhost:7688 --timeout=5 --strict -- echo 'Neo4j Test DB is up'",
     "start": "node index.js",
     "lint": "node_modules/.bin/eslint . --fix",
-    "pretest": "./wait-for-it.sh localhost:7687 --timeout=0 -- echo 'Neo4j Dev DB is up' && ./wait-for-it.sh localhost:7688 --timeout=0 -- echo 'Neo4j Test DB is up'",
+    "pretest": "./wait-for-it.sh localhost:7687 --timeout=5 --strict -- echo 'Neo4j Dev DB is up' && ./wait-for-it.sh localhost:7688 --timeout=5 --strict -- echo 'Neo4j Test DB is up'",
     "test": "node_modules/.bin/mocha **/*.test.js"
   },
   "author": "",
