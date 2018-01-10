@@ -18,7 +18,5 @@ env:
   global:
     - NEO4J_BOLT_CONNECTION_URL=bolt://localhost:7687
     - NEO4J_HTTP_CONNECTION_URL=http://localhost:7474
-    - NEO4J_TEST_BOLT_CONNECTION_URL=bolt://localhost:7688
-    - NEO4J_TEST_HTTP_CONNECTION_URL=http://localhost:7475
     - NEO4J_USERNAME=neo4j
     - NEO4J_PASSWORD=password

@@ -11,7 +11,7 @@ const seedData = async (session) => {
     `;
     seededData = await session.run(query);
   } catch (err) {
-    console.error(err);
+    throw err;
   }
   return seededData;
 };

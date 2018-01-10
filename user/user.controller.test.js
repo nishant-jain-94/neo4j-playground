@@ -6,13 +6,12 @@ const loadSeedData = require('../seed_data_loader');
 
 let UserController;
 const driver = neo4j.driver(
-  config.neo4j_test_bolt_connection_url,
+  config.neo4j_bolt_connection_url,
   neo4j.auth.basic(config.neo4j_username, config.neo4j_password),
 );
 const session = driver.session();
 
 describe('User controller', () => {
-  console.log(config.neo4j_test_bolt_connection_url);
   before(async () => {
     await loadSeedData(session);
     UserController = proxyquire('./user.controller', {
@@ -54,7 +53,6 @@ describe('User controller', () => {
   });
 
   after(async () => {
-    console.log("Afer Block");
     await session.close();
     await driver.close();
   });
