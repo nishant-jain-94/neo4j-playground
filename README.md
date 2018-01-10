@@ -1,4 +1,4 @@
-# Neo4j Playground
+# Neo4j Playground [![Build Status](https://travis-ci.org/nishant-jain-94/neo4j-playground.svg?branch=master)](https://travis-ci.org/nishant-jain-94/neo4j-playground)
 
 The primary objective of this repository is to demonstrate connection to Neo4j using NodeJS and Express.
 
