@@ -27,15 +27,11 @@ npm install
 
 The **third step** would be to create a **.env** file in the project folder with the following environment variables. You can replace these urls based on where your neo4j is running.
 
-Currently setup has two instances of neo4j running for devleopment and testing.
-
-The ideal thing would be is to have one single config, meaning no seperate config for testing, development and production, which means we have multiple deployments like testing, development and production with each having their own **.env**
+The setup doesn't distinguishes between developement, production and testing. It has same configuration for all the environment.
 
 ```
 NEO4J_BOLT_CONNECTION_URL=bolt://localhost:7687
 NEO4J_HTTP_CONNECTION_URL=http://localhost:7474
-NEO4J_TEST_BOLT_CONNECTION_URL=bolt://localhost:7688
-NEO4J_TEST_HTTP_CONNECTION_URL=http://localhost:7475
 NEO4J_USERNAME=neo4j
 NEO4J_PASSWORD=password
 ```
@@ -45,11 +41,17 @@ The **fourth step** would be to test the application by executing the following 
 ```
 npm run test
 ```
-If all the test cases pass then it would be good thing to run npm start which should start the application server.
+If the test cases pass then run npm start which should start the application server.
 
 ```
 npm start
 ```
+
+Now you can make http requests to the application server say
+1. http://localhost:4000/user/USER_01
+2. http://localhost:4000/user/USER_01/friends
+3. http://localhost:4000/user/USER_01/USER_02/mutual
+
 ## Issues
 
 Feel free to share your suggestions or problems by creating an issue.
